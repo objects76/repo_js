@@ -1,0 +1,17 @@
+{
+  "name": "ts-video",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve src",
+    "build": "tsc",
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "serve": "^11.3.0",
+    "typescript": "^3.8.3"
+  }
+}
