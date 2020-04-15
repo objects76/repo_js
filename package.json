@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "start": "serve src",
-    "build": "tsc",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
