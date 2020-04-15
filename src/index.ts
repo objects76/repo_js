@@ -23,14 +23,16 @@ async function play_video()
 
   console.dir(v);
   v.msHorizontalMirror = true;
-
+  
   const m = v as HTMLMediaElement;
+  m.autoplay = true;
   m.src = 'ThroughTheNight.webm';
   m.controls = true;
   m.autoplay = true;
   m.load();
   const vsize = await getVideoSize(v);
   console.log('video size=', vsize);
+  m.play();
 }
 
 play_video();
