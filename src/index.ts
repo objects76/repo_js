@@ -35,4 +35,20 @@ async function play_video()
   m.play();
 }
 
-play_video();
+async function play_webcamp() {
+  const video = document.querySelector('#video') as HTMLVideoElement;
+
+  if (navigator.mediaDevices.getUserMedia) {
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(function (stream) {
+        video.srcObject = stream;
+        video.play();
+      })
+      .catch(function (err0r) {
+        console.log("Something went wrong!");
+      });
+  }
+}
+
+play_webcamp();
+//play_video();

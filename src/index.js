@@ -24,12 +24,30 @@ function play_video() {
         console.dir(v);
         v.msHorizontalMirror = true;
         const m = v;
+        m.autoplay = true;
         m.src = 'ThroughTheNight.webm';
         m.controls = true;
         m.autoplay = true;
         m.load();
-        const msg = yield getVideoSize(v);
-        console.log('video size=', msg);
+        const vsize = yield getVideoSize(v);
+        console.log('video size=', vsize);
+        m.play();
     });
 }
-play_video();
+function play_webcamp() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const video = document.querySelector('#video');
+        if (navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true, {facingMode:true} })
+                .then(function (stream) {
+                video.srcObject = stream;
+                video.play();
+            })
+                .catch(function (err0r) {
+                console.log("Something went wrong!");
+            });
+        }
+    });
+}
+play_webcamp();
+//play_video();
