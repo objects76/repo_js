@@ -1,0 +1,11 @@
+@echo gen ssl key,cert.
+
+set OPENSSL_CONF=D:\Tools\openssl.cnf
+echo gen private key
+openssl genrsa -out key.pem 2048
+
+request cert 
+openssl req -new -key key.pem -out req.csr
+
+echo gen cert file.
+openssl x509 -req -in req.csr -signkey key.pem -out cert.pem -days 3650
